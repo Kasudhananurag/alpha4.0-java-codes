@@ -111,23 +111,86 @@ public class patterns {
     }
     }
 
+    public static void soildRhombus(int row){
+        for(int i = 1;i<=row;i++){
+            for(int j = 1;j<=row-i;j++){
+                System.out.print(" ");
+            }
+            for(int j = 1;j<=row;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void hollowRhombus(int row){
+        for(int i = 1;i<=row;i++){
+            //spaces
+            for(int j = 1;j<=row-i;j++){
+                System.out.print(" ");
+            }
+            //hollow rhombus
+            for(int j = 1; j<=row;j++){
+                if(i==1||j==1||i==row||j==row){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void diamond(int row){
+        for(int i = 1;i<=row;i++){
+            //spaces
+            for(int j = 1; j<= row-i;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j = 1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i = row;i>=1;i--){
+            //spaces
+            for(int j = 1; j<= row-i;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j = 1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         int row,col;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows and columns");
         row = sc.nextInt();
         col = sc.nextInt();
-        // hollow_Rectangle(row,col);
-        // System.out.println();
-        // invertedRotatedPyramid(row);
-        // System.out.println();
-        // pyramidStars(row);
-        // System.out.println();
-        // invertedHalfPyramidNumbers(row);
-        // System.out.println();
-        // floydTriangle(row);
-        // zero_one_triangle(row);
+        hollow_Rectangle(row,col);
+        System.out.println();
+        invertedRotatedPyramid(row);
+        System.out.println();
+        pyramidStars(row);
+        System.out.println();
+        invertedHalfPyramidNumbers(row);
+        System.out.println();
+        floydTriangle(row);
+        System.out.println();
+        zero_one_triangle(row);
+        System.out.println();
         butterfly(row);
+        System.out.println();
+        soildRhombus(row);
+        System.out.println();
+        hollowRhombus(row);
+        System.out.println();
+        diamond(row);
     }
 
 }
